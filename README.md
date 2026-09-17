@@ -52,6 +52,6 @@ Contrôle des dix tarifs avec/sans gala, sélections invalides et échappement H
 
 ## Sources graphiques
 
-- Polices : [DM Sans](https://fonts.google.com/specimen/DM+Sans) et [Instrument Serif](https://fonts.google.com/specimen/Instrument+Serif), distribuées sous SIL Open Font License. Licences dans `public/assets/`.
+- Polices : [DM Sans](https://fonts.google.com/specimen/DM+Sans) et [Space Grotesk](https://fonts.google.com/specimen/Space+Grotesk), distribuées sous SIL Open Font License. Licences dans `public/assets/`.
 - Photographie du pont de Pierre : [Decathlon Outdoor](https://www.decathlon-outdoor.com/fr-fr/explore/france/domaine-de-la-burthe-et-detente-dans-un-coin-de-nature-5f3e32b1728b4), utilisée comme visuel de démonstration ; licence de réutilisation non vérifiée. Remplacer par un visuel autorisé avant usage commercial.
 - Signature typographique et symbole d’arches créés pour ce prototype ; ils ne constituent pas les logos officiels de l’événement ou de l’Adera.
