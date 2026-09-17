@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#652b3c">
+  <meta name="theme-color" content="#96364e">
   <meta name="description" content="Inscrivez-vous aux 32es Journées de Bordeaux sur la pratique de l’ergonomie, du 25 au 27 mars 2026. Une rencontre pour penser le travail de demain.">
   <meta name="robots" content="noindex, nofollow">
   <title>Votre inscription · Journées de Bordeaux 2026</title>
@@ -18,7 +18,7 @@
       <svg viewBox="0 0 50 36" aria-hidden="true"><path d="M3 31V15a9 9 0 0 1 18 0v16m8 0V15a9 9 0 0 1 18 0v16M0 33h50"/></svg>
       <span>Les Journées<br><strong>de Bordeaux</strong></span>
     </a>
-    <div class="header-right"><span class="preview-tag"><span></span> Édition de démonstration</span><a class="help-link" href="mailto:jdb@adera.fr">Une question ? <span aria-hidden="true">↗</span></a></div>
+    <div class="header-right"><label class="preview-tag demo-fill" title="Remplir tous les champs avec des données de démonstration"><input id="demo-fill" type="checkbox" aria-label="Remplir le formulaire avec des données de démonstration"> Édition de démonstration</label><a class="help-link" href="mailto:jdb@adera.fr">Une question ? <span aria-hidden="true">↗</span></a></div>
   </header>
   <div class="page-layout">
     <aside class="event-panel" aria-label="À propos de l’événement">
@@ -107,7 +107,19 @@
         <span class="eyebrow">VOTRE PLACE VOUS ATTEND</span>
         <h2 id="success-title" tabindex="-1">À très bientôt,<br><em id="success-name">Camille.</em></h2>
         <p class="success-intro">Votre demande d’inscription a bien été enregistrée.<br>Nous avons hâte de vous retrouver à Bordeaux.</p>
-        <div class="ticket"><div class="ticket-top"><span>LES JOURNÉES DE BORDEAUX</span><span>2026</span></div><div class="ticket-name" id="ticket-name"></div><p id="ticket-organization"></p><div class="ticket-details"><div><span>RENDEZ-VOUS</span><strong>25—27 mars</strong></div><div><span>DESTINATION</span><strong>Bordeaux</strong></div></div><div class="ticket-divider"></div><div class="ticket-footer"><div><span id="ticket-formula"></span><strong id="ticket-total"></strong></div><div class="confirmation-stamp"><span aria-hidden="true">✓</span> Inscription enregistrée</div></div></div>
+        <article class="ticket" aria-label="Votre invitation aux Journées de Bordeaux">
+          <div class="ticket-main">
+            <div class="ticket-brand"><svg viewBox="0 0 50 36" aria-hidden="true"><path d="M3 31V15a9 9 0 0 1 18 0v16m8 0V15a9 9 0 0 1 18 0v16M0 33h50"/></svg><span>LES JOURNÉES<br>DE BORDEAUX</span></div>
+            <div class="ticket-person"><span class="ticket-label">VOTRE INVITATION</span><div class="ticket-name" id="ticket-name"></div><p id="ticket-organization"></p></div>
+            <div class="confirmation-stamp"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="8"/><path d="m6 10 3 3 5-6"/></svg> Inscription enregistrée</div>
+            <div class="ticket-footer"><span id="ticket-formula"></span><strong id="ticket-total"></strong></div>
+          </div>
+          <div class="ticket-stub">
+            <div class="ticket-edition">32<sup>es</sup><span>RENCONTRES</span></div>
+            <div class="ticket-details"><span>RENDEZ-VOUS</span><strong id="ticket-dates">25—27</strong><span>MARS 2026</span></div>
+            <div class="ticket-place"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z"/><circle cx="12" cy="10" r="2"/></svg><span>Bordeaux</span><small>FRANCE</small></div>
+          </div>
+        </article>
         <div id="payment-result" class="payment-result"></div>
         <div class="success-actions"><button class="primary-button" type="button" id="calendar"><span>Ajouter à mon agenda</span><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 2v6m10-6v6M3 11h18m-6 3v5m-3-2.5h6"/></svg></button><button class="text-button" id="print" type="button">Imprimer le récapitulatif <span aria-hidden="true">↗</span></button></div>
         <p class="success-note">Ceci est une confirmation de démonstration.<br>Aucun e-mail n’a été envoyé et aucun montant n’a été débité.</p><button type="button" id="restart" class="text-button restart-button">Recommencer la démonstration <span aria-hidden="true">↻</span></button>

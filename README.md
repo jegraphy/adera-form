@@ -12,6 +12,8 @@ python3 -m http.server 4173 --bind 127.0.0.1 --directory public
 
 Ouvrir http://localhost:4173.
 
+La petite case à côté de « Édition de démonstration » dans l’en-tête remplit les quatre étapes avec un profil exemple, une formule trois jours et le gala. La décocher conserve les valeurs ; la recocher les remplace par l’exemple. Elle est désactivée une fois l’inscription confirmée. Test navigateur reproductible : `playwright-cli run-code "$(cat tests/autofill.js)"` avec Playwright CLI et le serveur local actifs.
+
 ## Vercel
 
 Importer ce dossier dans un projet Vercel : préréglage **Other**, aucune commande d’installation ni de compilation, dossier de sortie **public**. `vercel.json` contient la configuration. Seul `public/` est publié ; les captures de référence et les tests ne le sont pas.

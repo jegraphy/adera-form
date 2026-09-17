@@ -183,8 +183,8 @@ if (typeof document !== 'undefined') {
     document.querySelector('#ticket-organization').textContent = value('organization');
     document.querySelector('#ticket-formula').textContent = ticket.label + (value('gala') === 'yes' ? ' + dîner de gala' : '');
     document.querySelector('#ticket-total').textContent = money(total);
-    const dates = document.querySelector('.ticket-details strong');
-    dates.textContent = ticket.days === 3 ? '25—27 mars' : selected('attendance').map(day => day.replace(' mars', '')).join(' & ') + ' mars';
+    document.querySelector('#ticket-dates').textContent = ticket.days === 3 ? '25—27' : selected('attendance').map(day => day.replace(' mars', '')).join(' & ');
+    document.querySelector('#demo-fill').disabled = true;
     const payment = document.querySelector('#payment-result');
     if (total === 0) payment.innerHTML = '<strong>Votre invitation est enregistrée.</strong><br>Aucun règlement n’est nécessaire pour cette formule.';
     else if (value('payment') === 'transfer') payment.innerHTML = `<strong>Prochaine étape : votre règlement par virement.</strong><br>Montant à régler : ${money(total)}. Dans le parcours définitif, les instructions de virement seraient transmises par l’organisateur. Aucun virement n’est à effectuer pour cette démonstration.`;
@@ -195,6 +195,30 @@ if (typeof document !== 'undefined') {
     document.querySelector('#main').scrollIntoView({ behavior: reducedMotion.matches ? 'instant' : 'smooth', block: 'start' });
     document.title = 'À bientôt à Bordeaux · Inscription enregistrée';
   }
+
+  document.querySelector('#demo-fill').addEventListener('change', event => {
+    if (!event.target.checked) return;
+    const sample = {
+      firstName: 'Camille', lastName: 'Dupont', email: 'camille.dupont@example.com',
+      ccEmail: 'secretariat@example.com', organization: 'Université de Bordeaux',
+      ticket: 'standard3', duCode: 'DEMO-2026', diet: 'Végétarien', allergy: 'Sans noix',
+      gala: 'yes', starter: 'Déclinaison de légumes de saison',
+      mainCourse: 'Risotto aux champignons de saison', dessert: 'Parfait basilic gingembre', drink: 'Thé',
+      payment: 'card', billingProfile: 'organization', billingOrg: 'Université de Bordeaux',
+      address: '12 rue des Facultés', addressExtra: 'Service des colloques', postal: '33000',
+      city: 'Bordeaux', country: 'France', billingEmail: 'facturation@example.com', phone: '05 00 00 00 00'
+    };
+    for (const [name, entry] of Object.entries(sample)) field(name).value = entry;
+    form.querySelectorAll('input[type="checkbox"]').forEach(input => { input.checked = true; });
+    form.querySelectorAll('input, select, textarea').forEach(input => {
+      input.removeAttribute('aria-invalid');
+      input.setCustomValidity('');
+    });
+    billingOrganizationEdited = false;
+    clearError();
+    syncOptions();
+    if (step === 3) summary();
+  });
 
   form.addEventListener('submit', async event => {
     event.preventDefault();
